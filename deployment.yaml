@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: nginx-webapp
-        image: 732203471374.dkr.ecr.ap-south-1.amazonaws.com/project:latest
+        image: 732203471374.dkr.ecr.ap-south-1.amazonaws.com/project:10
         imagePullPolicy: Always
 
         ports:
