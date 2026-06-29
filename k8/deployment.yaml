@@ -2,26 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-webapp
-  labels:
-    app: nginx-webapp
-
 spec:
   replicas: 2
-
   selector:
     matchLabels:
       app: nginx-webapp
-
   template:
     metadata:
       labels:
         app: nginx-webapp
-
     spec:
-      containers:
-      - name: nginx-webapp
-        image: 732203471374.dkr.ecr.ap-south-1.amazonaws.com/project:10
-        imagePullPolicy: Always
+      imagePullSecrets:
+        - name: ecr-secret   # 🔥 THIS IS IMPORTANT
 
-        ports:
-        - containerPort: 80
+      containers:
+        - name: nginx-webapp
+          image: 732203471374.dkr.ecr.ap-south-1.amazonaws.com/project:10
+          ports:
+            - containerPort: 80
