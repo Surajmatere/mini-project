@@ -17,6 +17,6 @@ spec:
 
       containers:
         - name: nginx-webapp
-          image: 732203471374.dkr.ecr.ap-south-1.amazonaws.com/project:15
+          image: 732203471374.dkr.ecr.ap-south-1.amazonaws.com/project:16
           ports:
             - containerPort: 80
